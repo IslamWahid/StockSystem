@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Assignment-1 Webapp</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<div id = "dateTime">
+  <script>var  d = new Date();
+  document.getElementById('dateTime').innerHTML = d.toDateString();
+  </script>
+</div>
+
+<body onload = "hideLoginForm()">
+  <header>
+    <h1>Welcome to  my Stock Tracker</h1>
+    <div class = "btn">
+      <button type = "button" id ="loginButton" onclick="showLoginForm()">Login</button>
+      <button type = "button" id ="logoutButton" onclick="logout()" >Logout</button>
+    </div>
+    <hr>
+    <h2 id="name"></h2>
+  </header>
+
+
+  <div id="Stocks" style="visibility:hidden;">
+    <button type="button" onclick="showAvailableStocks()">Add</button>
+    <table id="stocks_table">
+      <thead>
+        <th>Company</th>
+        <th>RecentMovement</th>
+      </thead>
+      <tbody id="stocks_table_body">
+      </tbody>
+    </table>
+  </div>
+
+
+  <div id="StockInfo">
+  </div>
+
+
+  <div id="hiddenLoginForm">
+    <div id = "wrapper">
+      Enter Username :<br>
+      <input type ="text" placeholder="UserName" id="username" value='Fred' required=""><br /><br />
+      Enter Your Password :<br>
+      <input type ="password" placeholder="Password" id ="password" value='freddo' required=""><br /><br />
+      <button id = "submitButton" onclick="LoginFunction();">Submit</button>
+      <input type="button" value="Cancel" onclick="hideLoginForm()"/>
+    </div>
+  </div>
+
+
+  <script  src="main.js"></script>
+
+</body>
+
+</html>
